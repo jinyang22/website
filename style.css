@@ -7,79 +7,89 @@ you're new to CSS they may seem a little complicated, but you can scroll down
 to this section's matching END comment to see page-specific styles.
 ******************************************************************************/
 
-@font-face {
-  font-family: Homemade Apple ;
-  src: url("https://cdn.glitch.global/9dde0010-c451-4ef1-a7d9-8759fcd43a14/HomemadeApple-Regular.ttf?v=1676527398729")
-}
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
 
 
-
-@font-face {
-  
-  font-family: 'Playfair Display', serif;
-  src: url("https://cdn.glitch.global/9dde0010-c451-4ef1-a7d9-8759fcd43a14/PlayfairDisplay-VariableFont_wght.ttf?v=1676531501843")
-}
-
-body {
-background-repeat: repeat;
-margin: 135px;
-animation: backgroundd 2s infinite;
-}
-@keyframes backgroundd {
-from {background-image: linear-gradient(#b9cacc, #4b6176);}
-to {background-image: linear-gradient(#4a5c69, #b9cacc);}
-} 
-
-     
-
-
-
-body {
-  font-family: 'Homemade Apple' , cursive;
-  background: black;
-  
-}
-.fin{
-  
- font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  
-}
-
-  ul {
-    height: 34em;
-    width: 35em;
-    padding: 5em 0 0 5em;
-    border: 0.1px solid grey;
-    border-radius: 1em;
-    background: linear-gradient(to bottom right, rgba(0,0,0,0.3),rgba(0,0,0,1)), url(https://cdn.glitch.global/9dde0010-c451-4ef1-a7d9-8759fcd43a14/R%20(1).jpg?v=1676533413512)
-    
-  }
-  
-}
-
-.fin{
-  
- font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  
-}
-
-.hover {
-  background-color:#f4efe2;
-  padding:5px;
-  margin:5px;
-}
-.hover:hover{
-  background-color:#91a085;
-  border-radius: 10px;
-}
-
-
-/*
+/* 
   The style rules specify elements by type and by attributes such as class and ID
   Each section indicates an element or elements, then lists the style properties to apply
   See if you can cross-reference the rules in this file with the elements in index.html
 */
 
 /* Our default values set as CSS variables */
+body{ margin:0;padding:0;border:0;}
+ 
+
+*{margin: 0;padding: 0;}
+
+h1.ml8 {
+  font-weight: 900;
+  font-size: 4.5em;
+  color: #fff;
+  width: 3em;
+  height: 3em;
+}
+
+.ml8 .letters-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  height: 1em;
+}
+
+.ml8 .letters {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  line-height: 0.7em;
+  right: -0.12em;
+  top: -0.2em;
+}
+
+.ml8 .bang {
+  font-size: 1.4em;
+  top: auto;
+  left: -0.06em;
+}
+
+.ml8 .circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+
+.ml8 .circle-white {
+  width: 3em;
+  height: 3em;
+  border: 2px dashed white;
+  border-radius: 2em;
+}
+
+.ml8 .circle-dark {
+  width: 2.2em;
+  height: 2.2em;
+  background-color: #4f7b86;
+  border-radius: 3em;
+  z-index: 1;
+}
+
+.ml8 .circle-dark-dashed {
+  border-radius: 2.4em;
+  background-color: transparent;
+  border: 2px dashed #4f7b86;
+  width: 2.3em;
+  height: 2.3em;
+}
