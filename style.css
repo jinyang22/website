@@ -1,95 +1,99 @@
-/******************************************************************************
-START Glitch hello-app default styles
-
-The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
-******************************************************************************/
-
-/******************************************************************************
-START Glitch hello-app default styles
-
-The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
-******************************************************************************/
 
 
-/* 
-  The style rules specify elements by type and by attributes such as class and ID
-  Each section indicates an element or elements, then lists the style properties to apply
-  See if you can cross-reference the rules in this file with the elements in index.html
-*/
 
-/* Our default values set as CSS variables */
+@font-face {
+  
+  font-family: 'Press Start 2P', cursive;
+  src: url("https://cdn.glitch.global/be82848a-3684-4e1c-b068-bb72d035f089/PressStart2P-Regular.ttf?v=1679417390046")
+}
+@font-face {
+font-family: 'Lora', serif;
+  src: url("https://cdn.glitch.global/be82848a-3684-4e1c-b068-bb72d035f089/Lora-VariableFont_wght.ttf?v=1679417374691")
+}
+
+
 body{ margin:0;padding:0;border:0;}
  
 
 *{margin: 0;padding: 0;}
 
-h1.ml8 {
-  font-weight: 900;
-  font-size: 4.5em;
-  color: #fff;
-  width: 3em;
-  height: 3em;
+.txt{
+    color: 	white;
+    font-weight: bold;
+    font-size: 10px;
+    animation: 8s linear 0s normal enter;
+}
+@keyframes enter {
+    /* 此时文字位于页面的最底部 
+       文字被缩放为原本的0.1倍    
+       文字为全透明状态
+    */   
+    0% {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1500px, 0);
+        animation-timing-function: linear;
+    }
+    /* 此时文字位于页面居中位置上方60px的位置 
+       文字被缩放为原本的0.75倍    
+       文字为半透明状态
+    */  
+    50% {
+        opacity: .5;
+        transform: scale3d(0.75, 0.75, 0.75) translate3d(0, -60px, 0);
+        animation-timing-function: linear;
+    }
+    /* 此时文字回归到正常位置 
+       文字未被缩放   
+       文字完全可见
+    */ 
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+        animation-timing-function: linear;
+    }
+    
+
+}
+.fin{ 
+ font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
 }
 
-.ml8 .letters-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  height: 1em;
+.line {
+  font-family: 'Press Start 2P', cursive;
+    border-right: 2px solid #000;
+    font-size: 100%; /* 字体大小 */
+    text-align: center; /* 文字横向居中 */
+    white-space: nowrap; /* 文字不换行 */
+    overflow: hidden; /* 多余的文字内容隐藏 */
 }
 
-.ml8 .letters {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  line-height: 0.7em;
-  right: -0.12em;
-  top: -0.2em;
+@keyframes broders {
+    from {border-right-color: #000;}
+    to {border-right-color: #fff;}
+}
+/* 容器宽的改变动画 */
+@keyframes widths {
+    from {width: 0;}
+    to {width: 100%;} /* 也可以是固定宽 */
 }
 
-.ml8 .bang {
-  font-size: 1.4em;
-  top: auto;
-  left: -0.06em;
+.line {
+    border-right: 2px solid #000;
+    font-size: 100%; /* 字体大小 */
+    text-align: center; /* 文字横向居中 */
+    white-space: nowrap; /* 文字不换行 */
+    overflow: hidden; /* 多余的文字内容隐藏 */
+    animation: borders 0.7s infinite normal,
+    	widths 2s steps(13); /* 重点 steps() */
 }
-
-.ml8 .circle {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-}
-
-.ml8 .circle-white {
-  width: 3em;
-  height: 3em;
-  border: 2px dashed white;
-  border-radius: 2em;
-}
-
-.ml8 .circle-dark {
-  width: 2.2em;
-  height: 2.2em;
-  background-color: #4f7b86;
-  border-radius: 3em;
-  z-index: 1;
-}
-
-.ml8 .circle-dark-dashed {
-  border-radius: 2.4em;
-  background-color: transparent;
-  border: 2px dashed #4f7b86;
-  width: 2.3em;
-  height: 2.3em;
+.lin {
+  font-family: 'Lora', serif;
+    border-right: 2px solid #000;
+    font-size: 100%; /* 字体大小 */
+    text-align: center; /* 文字横向居中 */
+    white-space: nowrap; /* 文字不换行 */
+    overflow: hidden; /* 多余的文字内容隐藏 */
+    animation: borders 0.7s infinite normal,
+    	widths 2s steps(13); /* 重点 steps() */
 }
