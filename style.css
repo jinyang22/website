@@ -1,4 +1,20 @@
+/******************************************************************************
+START Glitch hello-app default styles
 
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+
+
+/* 
+  The style rules specify elements by type and by attributes such as class and ID
+  Each section indicates an element or elements, then lists the style properties to apply
+  See if you can cross-reference the rules in this file with the elements in index.html
+*/
+
+/* Our default values set as CSS variables */
 
 
 @font-face {
@@ -12,17 +28,28 @@ font-family: 'Lora', serif;
 }
 
 
+
+
 body{ margin:0;padding:0;border:0;}
  
 
 *{margin: 0;padding: 0;}
 
+
+
+
 .txt{
     color: 	white;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
     animation: 8s linear 0s normal enter;
 }
+@media (max-width: 1080px){
+    .txt{
+     font-size: 5px;
+  }
+  }
+
 @keyframes enter {
     /* 此时文字位于页面的最底部 
        文字被缩放为原本的0.1倍    
@@ -62,7 +89,7 @@ body{ margin:0;padding:0;border:0;}
 .line {
   font-family: 'Press Start 2P', cursive;
     border-right: 2px solid #000;
-    font-size: 100%; /* 字体大小 */
+    font-size: 200%; /* 字体大小 */
     text-align: center; /* 文字横向居中 */
     white-space: nowrap; /* 文字不换行 */
     overflow: hidden; /* 多余的文字内容隐藏 */
@@ -80,7 +107,7 @@ body{ margin:0;padding:0;border:0;}
 
 .line {
     border-right: 2px solid #000;
-    font-size: 100%; /* 字体大小 */
+    font-size: 200%; /* 字体大小 */
     text-align: center; /* 文字横向居中 */
     white-space: nowrap; /* 文字不换行 */
     overflow: hidden; /* 多余的文字内容隐藏 */
